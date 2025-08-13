@@ -1,0 +1,73 @@
+{
+  "name": "Senoplan Player",
+  "short_name": "Senoplan",
+  "description": "Platform Taruhan Online",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot2.png",
+      "sizes": "750x1334",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Beranda",
+      "short_name": "Beranda",
+      "description": "Kembali ke beranda",
+      "url": "/"
+    },
+    {
+      "name": "Profil",
+      "short_name": "Profil",
+      "description": "Lihat profil Anda",
+      "url": "/profile"
+    },
+    {
+      "name": "Riwayat",
+      "short_name": "Riwayat",
+      "description": "Lihat riwayat taruhan",
+      "url": "/history"
+    }
+  ],
+  "categories": ["entertainment", "games", "social"],
+  "dir": "ltr",
+  "lang": "id-ID",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "scope": "/",
+  "splash_pages": null
+}

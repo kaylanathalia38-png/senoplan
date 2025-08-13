@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Senoplan Player - Platform Taruhan Online" />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Senoplan Player</title>
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/src/index.css" as="style" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" /></noscript>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="${VITE_CSP_POLICY}" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#3b82f6" />
+    <!-- iOS PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Senoplan Player" />
+    <!-- Windows PWA -->
+    <meta name="msapplication-TileColor" content="#3b82f6" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Senoplan Player" />
+    <meta name="twitter:description" content="Platform Taruhan Online" />
+    <meta name="twitter:image" content="/social-preview.jpg" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Senoplan Player" />
+    <meta property="og:description" content="Platform Taruhan Online" />
+    <meta property="og:url" content="https://senoplan.app" />
+    <meta property="og:image" content="/social-preview.jpg" />
+    <meta property="og:site_name" content="Senoplan Player" />
+    <meta property="og:locale" content="id_ID" />
+    <!-- Critical CSS -->
+    <style id="critical-css">
+      /* Critical CSS will be inlined here during build */
+      body { margin: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+      #root { min-height: 100vh; display: flex; flex-direction: column; }
+      .loading-spinner { border: 3px solid rgba(255, 255, 255, 0.1); border-radius: 50%; border-top: 3px solid #3b82f6; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 2rem auto; }
+      @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="loading-spinner"></div>
+    </div>
+    <!-- Load the app -->
+    <script type="module" src="/src/main.tsx"></script>
+    <!-- Load service worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+              console.log('ServiceWorker registration successful');
+            })
+            .catch(err => {
+              console.error('ServiceWorker registration failed: ', err);
+            });
+        });
+      }
+    </script>
+    <!-- Load web vitals -->
+    <script type="module" src="/src/utils/web-vitals.js"></script>
+  </body>
+</html>

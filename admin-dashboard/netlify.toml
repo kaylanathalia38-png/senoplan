@@ -1,0 +1,33 @@
+[build]
+  base = "admin-dashboard"
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18.0.0"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self' https://*.supabase.co; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.supabase.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co;"
+
+[dev]
+  framework = "vite"
+  target = "src"
+  port = 3001
+
+[dev.environment]
+  VITE_SUPABASE_URL = "https://your-project-ref.supabase.co"
+  VITE_SUPABASE_ANON_KEY = "your-anon-key"
+  VITE_SUPABASE_SERVICE_ROLE_KEY = "your-service-role-key"

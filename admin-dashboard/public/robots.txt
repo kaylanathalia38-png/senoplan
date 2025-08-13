@@ -1,0 +1,34 @@
+User-agent: *
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /account/
+Disallow: /profile/
+Disallow: /settings/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.env$
+
+# Sitemap
+Sitemap: https://admin.senoplan.app/sitemap.xml
+
+# Block sensitive files
+Disallow: /package.json
+Disallow: /yarn.lock
+Disallow: /README.md
+
+# Block development directories
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /dist/
+
+# Security
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /.htaccess
+
+# Allow public pages
+Allow: /$
+Allow: /login$
+Allow: /about$
+Allow: /contact$
